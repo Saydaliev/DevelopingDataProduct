@@ -1,0 +1,64 @@
+---
+title: "DevelopingDataProductProject1"
+output:
+  html_document: default
+  pdf_document: default
+---
+Author Saydaliev 
+Github Link:"https://github.com/Saydaliev/Developing-Data-Products"
+Rpubs Link:"https://rpubs.com/Saydaliev/594196"
+
+#Introduction
+Leaflet is one of the most popular Javascript libraries for creating interactive maps. The leaflet R package allows you to create your own leaflet maps without needing to know any Javascript!Create a web page using R Markdown that features a map created with Leaflet.Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+Your webpage must contain the date that you created the document, and it must contain a map created with Leaflet. We would love to see you show off your creativity!
+
+## My Map
+
+The leaflet() function creates a map widget that you can store in a variable so that you can modify the map later on. You can add features to the map using the pipe operator (%>%) just like in dplyr. The addTiles() function adds mapping data from Open Street Map. You can also add markers to your map one at a time using the addMarkers() function by specifying the longitude and latitude. (Here’s a tip if you tend to mix them up.) You can specify popup text for when you click on the marker with the popup argument. For this map, I’ve decided I’ll dream about eating at my favorite sub shop
+
+
+```{r, eval=FALSE}
+library(leaflet)
+my_map<-leaflet()%>%
+addTiles()
+my_map
+```
+
+
+```{r, echo=FALSE}
+library(leaflet)
+my_map<-leaflet()%>%
+addTiles()
+my_map
+```
+
+
+## My First Map
+```{r,}
+library(leaflet)
+my_map<-my_map %>%
+        addMarkers(lat = 2.9993, lng = 101.7079, 
+                   popup = "University Office")
+
+my_map<-leaflet() %>%
+        addTiles()%>%
+        addMarkers(lat = 2.9993, lng = 101.7079, 
+                   popup = "University Office")
+my_map
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4265,15 +4265,27 @@ summary {
 <div id="my-map" class="section level2">
 <h2>My Map</h2>
 <p>The leaflet() function creates a map widget that you can store in a variable so that you can modify the map later on. You can add features to the map using the pipe operator (%&gt;%) just like in dplyr. The addTiles() function adds mapping data from Open Street Map. You can also add markers to your map one at a time using the addMarkers() function by specifying the longitude and latitude. (Here’s a tip if you tend to mix them up.) You can specify popup text for when you click on the marker with the popup argument. For this map, I’ve decided I’ll dream about eating at my favorite sub shop</p>
+<pre class="r"><code>library(leaflet)
+my_map&lt;-leaflet()%&gt;%
+addTiles()
+my_map</code></pre>
+<div id="htmlwidget-53bf94229dfd46c02a4d" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-53bf94229dfd46c02a4d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}]},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="my-first-map" class="section level2">
 <h2>My First Map</h2>
 <pre class="r"><code>library(leaflet)
+my_map&lt;-my_map %&gt;%
+        addMarkers(lat = 2.9993, lng = 101.7079, 
+                   popup = &quot;University Office&quot;)
+
 my_map&lt;-leaflet() %&gt;%
-addMarkers(lat=2.9928, lng=101.7047, popup=&quot;University Putra Malaysia - Affilation&quot;)
+        addTiles()%&gt;%
+        addMarkers(lat = 2.9993, lng = 101.7079, 
+                   popup = &quot;University Office&quot;)
 my_map</code></pre>
-<div id="htmlwidget-45ed8f7fb9df3facc31e" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-45ed8f7fb9df3facc31e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addMarkers","args":[2.9928,101.7047,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"University Putra Malaysia - Affilation",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[2.9928,2.9928],"lng":[101.7047,101.7047]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-1c77ca8acdca8d609798" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1c77ca8acdca8d609798">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[2.9993,101.7079,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"University Office",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[2.9993,2.9993],"lng":[101.7079,101.7079]}},"evals":[],"jsHooks":[]}</script>
 </div>
 
 

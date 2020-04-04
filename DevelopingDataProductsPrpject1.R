@@ -14,6 +14,7 @@
 
 ## My First Map
 library(leaflet)
-my_map<-leaflet() %>%
-        addMarkers(lat=2.9928, lng=101.7047, popup="University Putra Malaysia - Affilation")
+
+my_map<-leaflet() %>%addTiles()%>%
+        my_map<-my_map %>%addMarkers(lat = 2.9993, lng = 101.7079,popup = "University Office")
 my_map

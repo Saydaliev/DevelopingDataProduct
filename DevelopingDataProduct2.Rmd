@@ -1,0 +1,42 @@
+---
+title: "DevelopingDataProduct2"
+author: "Saydaliev"
+date: "4/4/2020"
+output: ioslides_presentation
+---
+#Specify a scatterplot by indicating 'mode=markers'.
+```{r, eval=FALSE}
+library(plotly)
+plot_ly(mtcars, x=mtcars$disp,y=mtcars$mpg,mode="markers")
+```
+
+
+##Basic Scatterplot 
+
+
+```{r, echo=FALSE, message=FALSE}
+library(plotly)
+plot_ly(mtcars, x=mtcars$disp,y=mtcars$mpg,mode="markers")
+```
+
+```{r, eval=FALSE}
+library(plotly)
+plot_ly(mtcars, x=mtcars$disp,y=mtcars$mpg,mode="markers")
+```
+
+Scatterplot Color
+
+
+
+## Plot Basic Scatter with Plotly
+
+```{r pressure}
+library(plotly)
+plot_ly(mtcars, x=mtcars$disp, y=mtcars$mpg,color=rownames(mtcars),type="scatter")%>%
+        layout(xaxis=list(title="MPG"),yaxis=list(title="Displacement"))
+```
+
+
+
+
+
